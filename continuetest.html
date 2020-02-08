@@ -1,0 +1,25 @@
+<doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>
+		using the countinue statement in a for statement
+	</title>
+
+	<script>
+
+		for ( var count = 1; count <= 10; ++count )
+		{
+			if ( count == 5 )
+				continue; //skip remaining loop code only if count == 5
+
+			document.writeln( count + " " );
+		} //end for
+
+		document.writeln( "<p>used countinue to skip printing 5</p>" );
+		 
+
+	</script>
+
+</head><body></body>
+</html>
