@@ -1,0 +1,52 @@
+!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>switching between HTML5 list formats</title>
+	<script>
+		
+		var choice; //user's choice
+		var startTag; //starting list item tag
+		var endTag; //ending list item tag
+		var validInput = true; // true if input valid else false
+		var listType; //type of list a string
+
+		choice = window.prompt("select a list style:\n" + "1 (numbered), 2 (lettered), 3 (roman numbered)", "1" );
+		switch ( choice )
+		{
+			case "1":
+			startTag = "<ol>";
+			endTag = "</ol>";
+			listType = "<h1>numbered list</h1>";
+			break;
+		case "2":
+		    startTag = "<ol style = 'list-style-type: upper-alpha'>";
+		    endTag = "</ol>";
+		    listType = "<h1>lettered list</h1>";
+		    break;
+		case "3":
+	        startTag = "<ol style = 'list-style-type: upper-roman'>";
+	        endTag = "</ol>";
+	        listType = "<h1>roman numbered list</h1>";
+	        break;
+	    default:
+	        validInput = false;
+	        break;
+	} // end switch
+
+	if (validInput === true ) 
+	{
+		document.writeln( listType + startTag );
+
+		for ( var i = 1; i <= 3; ++i )
+			document.writeln( "<li>list item " + i + "</li>" );
+
+		document.writeln( endTag );
+	}  //end if
+
+	else
+		document.writeln( "invalid choice: " + choice );
+
+		</script>
+</head><body></body>
+</html>
